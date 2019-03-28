@@ -1,0 +1,17 @@
+.contact-wrapper {
+  position: relative;
+
+  .contact-footer-bar-wrapper {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .contact-footer-bar-wrapper {
+      display: block;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}

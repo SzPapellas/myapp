@@ -1,0 +1,54 @@
+<div class="main-navigation">
+  <ul class="main-navigation-list">
+    <li class="main-navigation-item">
+      <a class="">
+        AppName
+      </a>
+      <a class="main-navigation-toggle" (click)="toggleResponsiveMenu()">
+        <i class="fa" [ngClass]="{ 'fa-times': !isHidden, 'fa-bars': isHidden }"></i>
+      </a>
+    </li>
+    <li class="main-navigation-item" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+      <a routerLink="/home">
+        Home
+      </a>
+      <span class="active-indicator"></span>
+    </li>
+    <li class="main-navigation-item" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+      <a routerLink="/about">
+        About Us
+      </a>
+      <span class="active-indicator"></span>
+    </li>
+    <li class="main-navigation-item" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+      <a routerLink="/products">
+        Products
+      </a>
+      <span class="active-indicator"></span>
+    </li>
+    <li class="main-navigation-item" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+      <a routerLink="/services" routerLinkActive="active">
+        Services
+      </a>
+      <span class="active-indicator"></span>
+    </li>
+    <li class="main-navigation-item" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+      <a routerLink="/shop" routerLinkActive="active">
+        Shop
+      </a>
+      <span class="active-indicator"></span>
+    </li>
+    <li class="main-navigation-item" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+      <a routerLink="/contact" routerLinkActive="active">
+        Contact Us
+      </a>
+      <span class="active-indicator"></span>
+    </li>
+    <li class="main-navigation-item" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+      <a routerLink="/login" routerLinkActive="active">
+        Login
+      </a>
+      <span class="active-indicator"></span>
+    </li>
+  </ul>
+</div>

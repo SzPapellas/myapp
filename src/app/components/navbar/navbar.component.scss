@@ -1,0 +1,124 @@
+$main-color: #ffffff;
+$main-font-color: #2f3542;
+$hover-background-color: #00A6EA;
+$active-color: #00A6EA;
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+.main-navigation {
+  font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
+  background-color: $main-color;
+  z-index: 3;
+  width: 100%;
+
+  .main-navigation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .main-navigation-item {
+      position: relative;
+
+      a {
+        background-color: $main-color;
+        float: left;
+        display: block;
+        color: $main-font-color;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        position: relative;
+      }
+
+      .main-navigation-toggle {
+        display: none;
+      }
+
+      .active-indicator {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+      }
+
+      &:hover:not(:first-child) {
+        a {
+          background-color: $hover-background-color;
+          color: white;
+        }
+      }
+
+      &.active {
+        .active-indicator {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background-color: $active-color;
+        }
+      }
+    }
+
+    .main-navigation-item:first-child {
+      position: relative;
+      .main-navigation-toggle {
+        position: absolute;
+        right: 0;
+        height: 48px;
+        width: 48px;
+        padding: 0;
+
+        i {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-navigation {
+    .main-navigation-list {
+      .main-navigation-item:not(:first-child) {
+        display: block;
+        float: left;
+        width: 100%;
+
+        a {
+          width: 100%;
+          text-align: left;
+        }
+
+        &.is-hidden {
+          display: none;
+        }
+      }
+
+      .main-navigation-item:first-child {
+        display: block;
+        float: left;
+        width: 100%;
+
+        .main-navigation-toggle {
+          display: block;
+        }
+      }
+
+      .main-navigation-item {
+        .active-indicator {
+          left: 0;
+          top: 0;
+          width: 2px;
+          height: 100% !important;
+        }
+      }
+    }
+  }
+}
