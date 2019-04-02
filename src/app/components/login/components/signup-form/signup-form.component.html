@@ -1,13 +1,20 @@
 <div class='content'>
-  <div class='form'>
-    <div class='form-row'>
-      <div class='input-group'>
-        <label for=''>Name on card</label>
-        <input placeholder='' type='text'>
-      </div>
-    </div>
-  </div>
+    <form [formGroup]="registerForm" class='form'>
+        <div *ngFor="let field of formFields" class='form-row'>
+            <div class='input-group'>
+                <label>{{ field.label }}</label>
+                <input formControlName="{{ field.name }}" placeholder='' type="{{ field.type }}">
+                <div class="error-container" *ngIf="!registerForm.get(field.name).untouched && registerForm.get(field.name).errors">
+                    <div class="error-message" *ngFor="let error of registerForm.get(field.name).errors | keyvalue">
+                        {{ field.errorMessages[error.key]}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
+
 <footer class='footer'>
-  <button class='button'>Complete Payment</button>
+    <button [disabled]="registerForm.invalid" class='button'>Signup</button>
 </footer>
+

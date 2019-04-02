@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+$concrete: #f2f2f2;
+//fonts
+$font_0: Open Sans;
+$font_1: sans-serif;
 
 body {
   font-family: 'Quicksand', sans-serif;
+  background: $concrete;
+  font-size: 14px;
+  font-family: $font_0, $font_1;
+  line-height: 1;
 }

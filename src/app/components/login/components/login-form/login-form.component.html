@@ -1,29 +1,17 @@
 <div class='content'>
-  <div class='form'>
+  <form [formGroup]="loginForm" (submit)="submitLoginForm()" class='form'>
     <div class='form-row'>
       <div class='input-group'>
-        <label for=''>Name on card</label>
-        <input placeholder='' type='text'>
+        <label>Email</label>
+        <input formControlName="email" placeholder='' type='email'>
       </div>
     </div>
-    <div class='form-row'>
-      <div class='input-group'>
-        <label for=''>Card Number</label>
-        <input maxlength='16' placeholder='' type='number'>
-      </div>
+    <div class='input-group'>
+      <label>Password</label>
+      <input formControlName="password" placeholder='' type='password'>
     </div>
-    <div class='form-row'>
-      <div class='input-group'>
-        <label for=''>Expiry Date</label>
-        <input placeholder='' type='month'>
-      </div>
-      <div class='input-group'>
-        <label for=''>CVS</label>
-        <input maxlenght='4' placeholder='' type='number'>
-      </div>
-    </div>
-  </div>
+  </form>
 </div>
 <footer class='footer'>
-  <button class='button'>Complete Payment</button>
+  <button [disabled]="loginForm.invalid" class='button'>Login</button>
 </footer>
