@@ -6,6 +6,7 @@ import {
     ReactiveFormsModule
 } from '@angular/forms';
 import {ContactComponent} from './contact.component';
+import {ContactFooterBar} from './components/contact-footer-bar/contact-footer-bar.module';
 
 @NgModule({
     declarations: [
@@ -15,7 +16,8 @@ import {ContactComponent} from './contact.component';
         CommonModule,
         RouterModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        ContactFooterBar
     ],
     bootstrap: [
         ContactComponent

@@ -1,11 +1,78 @@
+@import '../../../variables/colors/primary-colors';
+@import '../../../variables/mixins/input-mixins';
+@import '../../../variables/mixins/button-mixins';
+
 .contact-wrapper {
   position: relative;
+
+  .contact-card {
+    box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.2);
+    position: relative;
+    background: #03b6c8;
+    background-size: 35%;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 45%;
+    color: white;
+
+    .content {
+      padding: 30px;
+
+      .form {
+        .form-row {
+          display: flex;
+          flex-direction: row;
+
+          &:not(:last-child) {
+            margin: 0 0 10px;
+          }
+        }
+        .input-group {
+          width: 100%;
+
+          textarea {
+            box-sizing: border-box;
+            width: 100%;
+            min-height: 20vh;
+            border-radius: 3px;
+            //Instead of the line below you could use @include background-clip($clip)
+            background-clip: padding-box;
+            resize: vertical;
+          }
+
+          .error-container {
+            padding: 10px 0;
+
+            .error-message {
+              font-family: 'Quicksand', sans-serif;
+              color: $red;
+            }
+          }
+        }
+        label {
+          @include input-label($white);
+        }
+        input {
+          @include primary-input($color_mountain_mist_approx, $white);
+        }
+
+        .button {
+          @include primary-button();
+          cursor: pointer;
+        }
+      }
+    }
+  }
 
   .contact-footer-bar-wrapper {
     display: none;
   }
 
   @media screen and (max-width: 768px) {
+    .contact-card {
+      max-width: 95%;
+    }
     .contact-footer-bar-wrapper {
       display: block;
       position: fixed;

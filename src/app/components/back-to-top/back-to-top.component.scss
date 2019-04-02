@@ -1,0 +1,38 @@
+@import '../../../variables/colors/primary-colors';
+
+.back-to-top {
+  z-index: 20;
+  line-height: 56px;
+  min-width: 0;
+  width: 56px;
+  height: 56px;
+  vertical-align: middle;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  border-radius: 50%;
+  background-clip: padding-box;
+  overflow: hidden;
+  background: #66BB6A;
+  right: 20px;
+  position: fixed;
+  bottom: 20px;
+  transition: transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+  outline: none;
+
+  .fa-arrow-up {
+    color: $white;
+    font-size: 25px;
+    line-height: 2;
+  }
+
+  &:hover{
+    background-color: #4CAF50;
+  }
+
+  &.show-back-to-top {
+    transform:scale(1);
+  }
+
+  &.hide-back-to-top {
+    transform:scale(0);
+  }
+}

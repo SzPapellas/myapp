@@ -1,7 +1,36 @@
 <div class="contact-wrapper">
-  <p>
-    contact works!
-  </p>
+  <div class="contact-card">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+  <div class="contact-card">
+    <div class='content'>
+      <form [formGroup]="contactForm" class='form'>
+        <div *ngFor="let field of formFields" class='form-row'>
+          <div class='input-group'>
+            <label>{{ field.label }}</label>
+            <input formControlName="{{ field.name }}" placeholder='' type="{{ field.type }}">
+            <div class="error-container" *ngIf="!contactForm.get(field.name).untouched && contactForm.get(field.name).errors">
+              <div class="error-message" *ngFor="let error of contactForm.get(field.name).errors | keyvalue">
+                {{ field.errorMessages[error.key]}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='form-row'>
+          <div class='input-group'>
+            <label>Message</label>
+            <textarea formControlName="message"></textarea>
+            <div class="error-container" *ngIf="!contactForm.get('message').untouched && contactForm.get('message').errors">
+              <div class="error-message" *ngFor="let error of contactForm.get('message').errors | keyvalue">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <button [disabled]="contactForm.invalid" class='button'>Send</button>
+      </form>
+    </div>
+  </div>
   <div class="contact-footer-bar-wrapper">
     <app-contact-footer-bar></app-contact-footer-bar>
   </div>

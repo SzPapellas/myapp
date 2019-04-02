@@ -9,9 +9,9 @@ import { ProductsComponent } from './components/products/products.component';
 import { AboutComponent } from './components/about/about.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { ServicesComponent } from './components/services/services.component';
-import { ContactFooterBarComponent } from './components/contact/components/contact-footer-bar/contact-footer-bar.component';
 import { LoginPage } from './components/login/login-page.module';
 import {ContactPage} from './components/contact/contact-component.module';
+import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import {ContactPage} from './components/contact/contact-component.module';
     AboutComponent,
     ShopComponent,
     ServicesComponent,
-    ContactFooterBarComponent
+    BackToTopComponent
   ],
   imports: [
     BrowserModule,

@@ -11,8 +11,10 @@ $active-color: #00A6EA;
   background-color: $main-color;
   z-index: 3;
   width: 100%;
+  box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.2);
 
   .main-navigation-list {
+    position: relative;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -80,6 +82,11 @@ $active-color: #00A6EA;
         }
       }
     }
+
+    .main-navigation-item:last-child {
+      position: absolute;
+      right: 0;
+    }
   }
 }
 
@@ -102,13 +109,17 @@ $active-color: #00A6EA;
       }
 
       .main-navigation-item:first-child {
-        display: block;
-        float: left;
-        width: 100%;
+         display: block;
+         float: left;
+         width: 100%;
 
-        .main-navigation-toggle {
-          display: block;
-        }
+         .main-navigation-toggle {
+           display: block;
+         }
+       }
+
+      .main-navigation-item:last-child {
+        position: relative;
       }
 
       .main-navigation-item {
