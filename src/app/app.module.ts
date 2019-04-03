@@ -10,9 +10,9 @@ import { AboutComponent } from './components/about/about.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { ServicesComponent } from './components/services/services.component';
 import { LoginPage } from './components/login/login-page.module';
-import {ContactPage} from './components/contact/contact-component.module';
-import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
-import {ProfilePage} from './components/profile/profile.module';
+import { ContactPage } from './components/contact/contact-component.module';
+import { BackToTop } from './components/back-to-top/back-to-top.module';
+import { ProfilePage } from './components/profile/profile.module';
 
 @NgModule({
   declarations: [
@@ -21,8 +21,7 @@ import {ProfilePage} from './components/profile/profile.module';
     ProductsComponent,
     AboutComponent,
     ShopComponent,
-    ServicesComponent,
-    BackToTopComponent
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +29,8 @@ import {ProfilePage} from './components/profile/profile.module';
     Navbar,
     LoginPage,
     ContactPage,
-    ProfilePage
+    ProfilePage,
+    BackToTop
   ],
   providers: [],
   bootstrap: [AppComponent]
