@@ -9,6 +9,7 @@ import {ShopComponent} from './components/shop/shop.component';
 import {ServicesComponent} from './components/services/services.component';
 import {LoginFormComponent} from './components/login/components/login-form/login-form.component';
 import {SignupFormComponent} from './components/login/components/signup-form/signup-form.component';
+import {ProfileComponent} from './components/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -59,7 +60,11 @@ const routes: Routes = [
         component: SignupFormComponent
       },
     ]
-  }
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
 ];
 
 @NgModule({

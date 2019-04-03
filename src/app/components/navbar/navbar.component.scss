@@ -1,3 +1,5 @@
+@import '../../../variables/colors/primary-colors';
+
 $main-color: #ffffff;
 $main-font-color: #2f3542;
 $hover-background-color: #00A6EA;
@@ -32,6 +34,20 @@ $active-color: #00A6EA;
         text-decoration: none;
         font-size: 17px;
         position: relative;
+
+        .toggle-profile {
+          color: #2f3542;
+          margin: 0 5px;
+        }
+
+        .dropdown-content {
+          //display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
       }
 
       .main-navigation-toggle {

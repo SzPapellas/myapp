@@ -44,9 +44,23 @@
       </a>
       <span class="active-indicator"></span>
     </li>
-    <li class="main-navigation-item" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
-      <a routerLink="/login" routerLinkActive="active">
+    <li class="main-navigation-item"
+        [ngClass]="{ 'is-hidden': isHidden }"
+        routerLinkActive="active"
+        *ngIf="isLoggedIn">
+      <a routerLink="/profile" routerLinkActive="active">
+        Profile
+      </a>
+      <span class="active-indicator"></span>
+    </li>
+    <li class="main-navigation-item"
+        [ngClass]="{ 'is-hidden': isHidden }"
+        routerLinkActive="active">
+      <a routerLink="/login" *ngIf="!isLoggedIn" routerLinkActive="active">
         Login
+      </a>
+      <a routerLink="/login" *ngIf="isLoggedIn" routerLinkActive="active">
+        Logout
       </a>
       <span class="active-indicator"></span>
     </li>
