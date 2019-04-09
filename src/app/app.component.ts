@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import {
+  NavigationEnd,
+  Router
+} from '@angular/router';
+
+declare let ga: (param1, param2, param3?) => {};
 
 @Component({
   selector: 'app-root',
@@ -6,18 +12,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor() {
-    const script1 = document.createElement('script');
-    script1.async = true;
-    script1.src = 'https://www.googletagmanager.com/gtag/js?id=UA-137973739-1';
-    document.head.appendChild(script1);
+  constructor(public router: Router) {
 
-    const script2 = document.createElement('script');
-    script2.innerHTML = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-      `;
+    // subscribe to router events and send page views to Google Analytics
+    this.router.events.subscribe(event => {
+
+      if (event instanceof NavigationEnd) {
+        ga('set', 'page', event.urlAfterRedirects);
+        ga('send', 'pageview');
+
+      }
+
+    });
   }
 
   title = 'my-app';
