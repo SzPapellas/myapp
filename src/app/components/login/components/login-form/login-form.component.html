@@ -1,5 +1,5 @@
 <div class='content'>
-  <form [formGroup]="loginForm" (submit)="submitLoginForm()" class='form'>
+  <form [formGroup]="loginForm" class='form' novalidate>
     <div class='form-row'>
       <div class='input-group'>
         <label>Email</label>
@@ -13,5 +13,5 @@
   </form>
 </div>
 <footer class='footer'>
-  <button [disabled]="loginForm.invalid" class='button'>Login</button>
+  <button type="button" class='button' (click)="submit()">Login</button>
 </footer>

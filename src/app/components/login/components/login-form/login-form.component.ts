@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from '../../../../services/login.service';
 
 @Component({
   selector: 'app-login-form',
@@ -11,7 +13,9 @@ export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(
-      private formBuilder: FormBuilder
+      private formBuilder: FormBuilder,
+      private router: Router,
+      private loginService: LoginService
   ) { }
 
 
@@ -22,7 +26,8 @@ export class LoginFormComponent implements OnInit {
     });
   }
 
-  submitLoginForm(): void {
-    console.log('login');
+  submit(): void {
+    this.loginService.setLoginStatus(true);
+    this.router.navigate(['/home']);
   }
 }

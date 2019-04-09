@@ -10,6 +10,7 @@ import {ServicesComponent} from './components/services/services.component';
 import {LoginFormComponent} from './components/login/components/login-form/login-form.component';
 import {SignupFormComponent} from './components/login/components/signup-form/signup-form.component';
 import {ProfileComponent} from './components/profile/profile.component';
+import {LoginRouteGuard} from './services/login-route-guard';
 
 const routes: Routes = [
   {
@@ -63,6 +64,7 @@ const routes: Routes = [
   },
   {
     path: 'profile',
+    canActivate: [LoginRouteGuard],
     component: ProfileComponent
   },
 ];

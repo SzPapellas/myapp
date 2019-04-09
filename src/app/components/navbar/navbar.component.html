@@ -59,7 +59,7 @@
       <a routerLink="/login" *ngIf="!isLoggedIn" routerLinkActive="active">
         Login
       </a>
-      <a routerLink="/login" *ngIf="isLoggedIn" routerLinkActive="active">
+      <a *ngIf="isLoggedIn" (click)="logout()">
         Logout
       </a>
       <span class="active-indicator"></span>

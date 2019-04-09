@@ -11,8 +11,6 @@ export class NavbarComponent implements OnInit {
 
   isHidden = true;
   isLoggedIn = false;
-  username = 'Szabi';
-  isProfileOpen = false;
 
   constructor(
       private router: Router,
@@ -31,7 +29,8 @@ export class NavbarComponent implements OnInit {
     this.isHidden = !this.isHidden;
   }
 
-  toggleProfile(): void {
-    this.isProfileOpen = !this.isProfileOpen;
+  logout(): void {
+    this.loginService.setLoginStatus(false);
+    this.router.navigate(['/home']);
   }
 }

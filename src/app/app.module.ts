@@ -13,6 +13,7 @@ import { LoginPage } from './components/login/login-page.module';
 import { ContactPage } from './components/contact/contact-component.module';
 import { BackToTop } from './components/back-to-top/back-to-top.module';
 import { ProfilePage } from './components/profile/profile.module';
+import { LoginRouteGuard } from './services/login-route-guard';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { ProfilePage } from './components/profile/profile.module';
     ProfilePage,
     BackToTop
   ],
-  providers: [],
+  providers: [LoginRouteGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
