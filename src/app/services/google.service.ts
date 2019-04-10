@@ -18,7 +18,7 @@ export function googleAnalyticsHeadScripts() {
     head.insertBefore(googleAnalyticsSecondScript, head.firstChild);
     head.insertBefore(googleAnalyticsFirstScript, head.firstChild);
 
-    gtag('config', 'GA_MEASUREMENT_ID', {
+    gtag('config', 'UA-137973739-1', {
         custom_map: {
             dimension1: 'user_id',
             dimension2: 'page_to'
