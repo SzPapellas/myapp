@@ -22,7 +22,7 @@ environment = null;
   ngAfterViewInit(): void {
     this.router.events.subscribe(event => {
 
-      if (event instanceof NavigationEnd) {
+      if (event instanceof NavigationEnd && (window as any).ga) {
         // (window as any).ga('set', 'page', event.urlAfterRedirects);
         // (window as any).ga('send', 'event', {name: 'pagechange'});
         googleAnalytics(event.urlAfterRedirects);
