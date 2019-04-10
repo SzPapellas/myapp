@@ -29,7 +29,7 @@ export function googleAnalytics(url) {
 
     const dimensions = chain(eventDetails)
         .keys()
-        .map((key, index) => ['dimension' + index, key])
+        .map((key, index) => ['dimension' + index, eventDetails[key]])
         .fromPairs()
         .value();
 
