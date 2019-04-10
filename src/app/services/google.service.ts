@@ -25,16 +25,16 @@ export function googleAnalytics(url) {
 }
 
 export function googleAnalyticsEvent(eventAction, eventDetails) {
-    const metrics = chain(eventDetails)
+    const dimension = chain(eventDetails)
         .keys()
-        .map((key, index) => ['metric' + index, key])
+        .map((key, index) => ['dimension' + index, key])
         .fromPairs()
         .value();
 
-    console.log(metrics);
+    console.log(dimension);
 
     gtag('config', 'UA-137973739-1', {
-        custom_map: metrics
+        custom_map: dimension
     });
 
     gtag('event', eventAction, eventDetails);
