@@ -17,21 +17,23 @@ export function googleAnalyticsHeadScripts() {
 
     head.insertBefore(googleAnalyticsSecondScript, head.firstChild);
     head.insertBefore(googleAnalyticsFirstScript, head.firstChild);
-
-    gtag('config', 'UA-137973739-1', {
-        custom_map: {
-            dimension1: 'user_id',
-            dimension2: 'page_to'
-        }
-    });
 }
 
 export function googleAnalytics(url) {
     gtag('config', 'UA-137973739-1', { page_path: url });
-    gtag('event', 'route_change', {
+
+    const eventDetails = {
         user_id: 'valami',
         page_to: url
-    });
+    };
+
+    const dimensions = chain(eventDetails)
+        .keys()
+        .map((key, index) => ['dimension' + index, key])
+        .fromPairs()
+        .value();
+
+    gtag('event', 'route_change', dimensions);
 }
 
 /* export function googleAnalyticsEvent(eventAction, eventDetails) {
