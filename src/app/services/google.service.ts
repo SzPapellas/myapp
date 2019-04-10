@@ -1,4 +1,5 @@
-declare let gtag: (param1, param2, param3) => {};
+declare let gtag: (action, id, value) => {};
+declare let ga: (action, category, eventCategory, eventAction, eventLabel, eventValue) => {};
 
 export function googleAnalyticsHeadScripts() {
     const head = document.getElementsByTagName('head')[0];
@@ -19,4 +20,8 @@ export function googleAnalyticsHeadScripts() {
 
 export function googleAnalytics(url) {
     gtag('config', 'UA-137973739-1', { page_path: url });
+}
+
+export function googleAnalyticsEvent(eventCategory, eventAction, eventLabel, eventValue) {
+    ga('send', 'event', eventCategory, eventAction, eventLabel, eventValue);
 }
