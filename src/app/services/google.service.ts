@@ -1,5 +1,5 @@
 declare let gtag: (action, id, value) => {};
-declare let ga: (action, category, eventCategory?, eventAction?, eventLabel?, eventValue?) => {};
+declare let ga: (eventName, eventDetails) => {};
 
 export function googleAnalyticsHeadScripts() {
     const head = document.getElementsByTagName('head')[0];
@@ -22,10 +22,6 @@ export function googleAnalytics(url) {
     gtag('config', 'UA-137973739-1', { page_path: url });
 }
 
-export function googleAnalyticsEvent(eventCategory, eventAction, eventLabel, eventValue) {
-    gtag('event', eventAction, {
-        event_category: eventCategory,
-        event_label: eventLabel,
-        event_value: eventValue
-    });
+export function googleAnalyticsEvent(eventName, eventDetails) {
+    gtag('event', eventName, eventDetails);
 }
