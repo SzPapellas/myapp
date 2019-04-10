@@ -1,5 +1,7 @@
+import {chain, keys, map} from 'lodash';
+
 declare let gtag: (action, id, value) => {};
-declare let ga: (eventName, eventDetails) => {};
+declare let ga: (eventAction, eventDetails) => {};
 
 export function googleAnalyticsHeadScripts() {
     const head = document.getElementsByTagName('head')[0];
@@ -22,6 +24,18 @@ export function googleAnalytics(url) {
     gtag('config', 'UA-137973739-1', { page_path: url });
 }
 
-export function googleAnalyticsEvent(eventName, eventDetails) {
-    gtag('event', eventName, eventDetails);
+export function googleAnalyticsEvent(eventAction, eventDetails) {
+    const metrics = chain(eventDetails)
+        .keys()
+        .map((key, index) => ['metric' + index, key])
+        .fromPairs()
+        .value();
+
+    console.log(metrics);
+
+    gtag('config', 'UA-137973739-1', {
+        custom_map: metrics
+    });
+
+    gtag('event', eventAction, eventDetails);
 }

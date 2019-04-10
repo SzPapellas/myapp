@@ -28,7 +28,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   submit(): void {
-    googleAnalyticsEvent('login', { user: 'Szabi' });
+    googleAnalyticsEvent('login', { user_name: 'anonymus', user_id: '1234', email: 'test@test.com'});
     this.loginService.setLoginStatus(true);
     this.router.navigate(['/home']);
   }
