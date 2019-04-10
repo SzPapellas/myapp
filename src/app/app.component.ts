@@ -4,6 +4,9 @@ import {
   Router
 } from '@angular/router';
 import {googleAnalytics} from './services/google.service';
+import {filter, map} from 'rxjs/operators';
+import { RouterEvent } from '@angular/router';
+
 declare var gtag: any;
 
 @Component({
@@ -20,15 +23,9 @@ environment = null;
   }
 
   ngAfterViewInit(): void {
-    this.router.events.subscribe(event => {
-
-      if (event instanceof NavigationEnd && (window as any).ga) {
-        // (window as any).ga('set', 'page', event.urlAfterRedirects);
-        // (window as any).ga('send', 'event', {name: 'pagechange'});
-        googleAnalytics(event.urlAfterRedirects);
-      }
-
-    });
+    this.router.events.pipe(
+        filter(event => event instanceof NavigationEnd),
+        map((event: NavigationEnd) => googleAnalytics(event.urlAfterRedirects))
+    ).subscribe();
   }
-
 }

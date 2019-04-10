@@ -1,7 +1,6 @@
 import {chain, keys, map} from 'lodash';
 
 declare let gtag: (action, id, value) => {};
-declare let ga: (eventAction, eventDetails) => {};
 
 export function googleAnalyticsHeadScripts() {
     const head = document.getElementsByTagName('head')[0];
@@ -18,13 +17,24 @@ export function googleAnalyticsHeadScripts() {
 
     head.insertBefore(googleAnalyticsSecondScript, head.firstChild);
     head.insertBefore(googleAnalyticsFirstScript, head.firstChild);
+
+    gtag('config', 'GA_MEASUREMENT_ID', {
+        custom_map: {
+            dimension1: 'user_id',
+            dimension2: 'page_to'
+        }
+    });
 }
 
 export function googleAnalytics(url) {
     gtag('config', 'UA-137973739-1', { page_path: url });
+    gtag('event', 'route_change', {
+        user_id: 'valami',
+        page_to: url
+    });
 }
 
-export function googleAnalyticsEvent(eventAction, eventDetails) {
+/* export function googleAnalyticsEvent(eventAction, eventDetails) {
     const dimension = chain(eventDetails)
         .keys()
         .map((key, index) => ['dimension' + index, key])
@@ -38,4 +48,4 @@ export function googleAnalyticsEvent(eventAction, eventDetails) {
     });
 
     gtag('event', eventAction, eventDetails);
-}
+}*/

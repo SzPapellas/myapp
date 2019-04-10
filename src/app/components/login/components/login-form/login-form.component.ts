@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../../../../services/login.service';
-import {googleAnalyticsEvent} from '../../../../services/google.service';
 
 @Component({
   selector: 'app-login-form',
@@ -28,7 +27,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   submit(): void {
-    googleAnalyticsEvent('login', { user_name: 'anonymus', user_id: '1234', email: 'test@test.com'});
+    // googleAnalyticsEvent('login', { user_name: 'anonymus', user_id: '1234', email: 'test@test.com'});
     this.loginService.setLoginStatus(true);
     this.router.navigate(['/home']);
   }
