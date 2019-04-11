@@ -29,9 +29,11 @@ export function googleAnalytics(url) {
 
     const dimensions = chain(eventDetails)
         .keys()
-        .map((key, index) => ['dimension' + index + 1, eventDetails[key]])
+        .map((key, index) => ['dimension' + (index + 1), eventDetails[key]])
         .fromPairs()
         .value();
+
+    console.log(dimensions);
 
     gtag('event', 'route_change', dimensions);
 }
