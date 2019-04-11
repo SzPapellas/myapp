@@ -20,7 +20,6 @@ export function googleAnalyticsHeadScripts() {
 }
 
 export function googleAnalytics(url) {
-    gtag('config', 'UA-137973739-1', { page_path: url });
 
     const eventDetails = {
         user_id: 'valami',
@@ -34,8 +33,7 @@ export function googleAnalytics(url) {
         .value();
 
     console.log(dimensions);
-
-    gtag('event', 'route_change', dimensions);
+    gtag('config', 'UA-137973739-1', dimensions);
 }
 
 /* export function googleAnalyticsEvent(eventAction, eventDetails) {
