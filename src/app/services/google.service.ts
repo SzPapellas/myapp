@@ -28,12 +28,16 @@ export function googleAnalytics(url) {
 
     const dimensions = chain(eventDetails)
         .keys()
-        .map((key, index) => ['dimension' + (index + 1), eventDetails[key]])
+        .map((key, index) => ['dimension' + (index + 1), key])
         .fromPairs()
         .value();
 
+    gtag('config', 'UA-137973739-1', {
+        custom_map: dimensions
+    });
+
     console.log(dimensions);
-    gtag('config', 'UA-137973739-1', dimensions);
+    gtag('event', 'UA-137973739-1', eventDetails);
 }
 
 /* export function googleAnalyticsEvent(eventAction, eventDetails) {
