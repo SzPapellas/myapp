@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Navbar } from './components/navbar/navbar.module';
 import { HomeComponent } from './components/home/home.component';
-import { ProductsComponent } from './components/products/products.component';
 import { AboutComponent } from './components/about/about.component';
 import { ServicesComponent } from './components/services/services.component';
 import { LoginPage } from './components/login/login-page.module';
@@ -15,8 +14,9 @@ import { ProfilePage } from './components/profile/profile.module';
 import { LoginRouteGuard } from './services/login-route-guard';
 import { registerLocaleData } from '@angular/common';
 import localeHu from '@angular/common/locales/hu';
-import {ProductPage} from './components/products/products.module';
+import {ProductsPage} from './components/products/products.module';
 import {ShopPage} from './components/shop/shop.module';
+import {ProductPage} from './components/product/product.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +32,7 @@ import {ShopPage} from './components/shop/shop.module';
     LoginPage,
     ContactPage,
     ProfilePage,
+    ProductsPage,
     ProductPage,
     ShopPage,
     BackToTop

@@ -1,19 +1,19 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ProductComponent} from '../product/product.component';
+import {ProductsComponent} from './products.component';
 
 @NgModule({
     declarations: [
-        ProductComponent
+        ProductsComponent
     ],
     imports: [
         CommonModule
     ],
     bootstrap: [
-        ProductComponent
+        ProductsComponent
     ],
     exports: [
-        ProductComponent
+        ProductsComponent
     ]
 })
-export class ProductPage {}
+export class ProductsPage {}
