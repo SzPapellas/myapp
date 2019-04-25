@@ -23,9 +23,9 @@ environment = null;
   }
 
   ngAfterViewInit(): void {
-    this.router.events.pipe(
+    /*this.router.events.pipe(
         filter(event => event instanceof NavigationEnd),
         map((event: NavigationEnd) => googleAnalytics(event.urlAfterRedirects))
-    ).subscribe();
+    ).subscribe();*/
   }
 }

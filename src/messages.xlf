@@ -6,7 +6,6 @@
         <source>
     Home
   </source>
-   <target>Kezdolap</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">5</context>

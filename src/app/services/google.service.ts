@@ -37,7 +37,7 @@ export function googleAnalytics(url) {
     });
 
     console.log(dimensions);
-    gtag('event', 'UA-137973739-1', eventDetails);
+    gtag('event', 'page_change', eventDetails);
 }
 
 /* export function googleAnalyticsEvent(eventAction, eventDetails) {
