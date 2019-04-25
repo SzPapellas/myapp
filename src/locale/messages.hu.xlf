@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="fe0d485d42f2a7f36d9efcb2e66756f4afaa845f" datatype="html">
+        <source>
+    Home
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0bff6800e0b89fc81252e47c38f42f8419dde8cf" datatype="html">
+        <source>
+    About Us
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9a9e80e664fb3e4a10ccd488602916ce508653d2" datatype="html">
+        <source>
+    Products
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f3a9c9735b0a83549408d58d32d4da5a0729eeb0" datatype="html">
+        <source>
+    Services
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e9b0acf0db3db04e0fad19e7ce06300f28c67604" datatype="html">
+        <source>
+    Shop
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4bedab65b1b2ec126e416d09e7d83ac5ab9a5d04" datatype="html">
+        <source>
+    Contact Us
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f963163fbb813ce151d1f26867c21caba6b99d69" datatype="html">
+        <source>
+    Profile
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="12910217fdcdbca64bee06f511639b653d5428ea" datatype="html">
+        <source>
+    Login
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0f4914f5caefbc549aa6bf6dc12b4dbe6a0a4bff" datatype="html">
+        <source>
+    Logout
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

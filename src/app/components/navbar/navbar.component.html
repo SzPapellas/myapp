@@ -1,68 +1,33 @@
 <div class="main-navigation">
-  <ul class="main-navigation-list">
-    <li class="main-navigation-item">
-      <a class="">
-        AppName
-      </a>
-      <a class="main-navigation-toggle" (click)="toggleResponsiveMenu()">
-        <i class="fa" [ngClass]="{ 'fa-times': !isHidden, 'fa-bars': isHidden }"></i>
-      </a>
-    </li>
-    <li class="main-navigation-item" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
-      <a routerLink="/home">
-        Home
-      </a>
-      <span class="active-indicator"></span>
-    </li>
-    <li class="main-navigation-item" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
-      <a routerLink="/about">
-        About Us
-      </a>
-      <span class="active-indicator"></span>
-    </li>
-    <li class="main-navigation-item" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
-      <a routerLink="/products">
-        Products
-      </a>
-      <span class="active-indicator"></span>
-    </li>
-    <li class="main-navigation-item" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
-      <a routerLink="/services" routerLinkActive="active">
-        Services
-      </a>
-      <span class="active-indicator"></span>
-    </li>
-    <li class="main-navigation-item" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
-      <a routerLink="/shop" routerLinkActive="active">
-        Shop
-      </a>
-      <span class="active-indicator"></span>
-    </li>
-    <li class="main-navigation-item" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
-      <a routerLink="/contact" routerLinkActive="active">
-        Contact Us
-      </a>
-      <span class="active-indicator"></span>
-    </li>
-    <li class="main-navigation-item"
-        [ngClass]="{ 'is-hidden': isHidden }"
-        routerLinkActive="active"
-        *ngIf="isLoggedIn">
-      <a routerLink="/profile" routerLinkActive="active">
-        Profile
-      </a>
-      <span class="active-indicator"></span>
-    </li>
-    <li class="main-navigation-item"
-        [ngClass]="{ 'is-hidden': isHidden }"
-        routerLinkActive="active">
-      <a routerLink="/login" *ngIf="!isLoggedIn" routerLinkActive="active">
-        Login
-      </a>
-      <a *ngIf="isLoggedIn" (click)="logout()">
-        Logout
-      </a>
-      <span class="active-indicator"></span>
-    </li>
-  </ul>
+  <a class="main-navigation-toggle" (click)="toggleResponsiveMenu()">
+    <i class="fa" [ngClass]="{ 'fa-times': !isHidden, 'fa-bars': isHidden }"></i>
+  </a>
+  <a i18n routerLink="/home" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+    Home
+  </a>
+  <a i18n routerLink="/about" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+    About Us
+  </a>
+  <a i18n routerLink="/products" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+    Products
+  </a>
+  <a i18n routerLink="/services" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+    Services
+  </a>
+  <a i18n routerLink="/shop" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+    Shop
+  </a>
+  <a i18n routerLink="/contact" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+    Contact Us
+  </a>
+  <a i18n routerLink="/profile" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active" *ngIf="isLoggedIn">
+    Profile
+  </a>
+  <a i18n routerLink="/login" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active" *ngIf="!isLoggedIn">
+    Login
+  </a>
+  <a i18n *ngIf="isLoggedIn" (click)="logout()">
+    Logout
+  </a>
+  <app-language-selector></app-language-selector>
 </div>

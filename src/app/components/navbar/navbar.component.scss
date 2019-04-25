@@ -1,9 +1,6 @@
 @import '../../../variables/colors/primary-colors';
 
-$main-color: #ffffff;
-$main-font-color: #2f3542;
-$hover-background-color: #00A6EA;
-$active-color: #00A6EA;
+
 
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
@@ -15,7 +12,29 @@ $active-color: #00A6EA;
   width: 100%;
   box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.2);
 
-  .main-navigation-list {
+  a {
+    background-color: $main-color;
+    float: left;
+    display: block;
+    color: $main-font-color;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    font-size: 17px;
+    position: relative;
+
+    &:hover {
+      background-color: $hover-background-color;
+      color: white;
+    }
+
+    &.active {
+      background-color: $hover-background-color;
+      color: white;
+    }
+  }
+
+  /*.main-navigation-list {
     position: relative;
     list-style: none;
     padding: 0;
@@ -23,32 +42,6 @@ $active-color: #00A6EA;
 
     .main-navigation-item {
       position: relative;
-
-      a {
-        background-color: $main-color;
-        float: left;
-        display: block;
-        color: $main-font-color;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        position: relative;
-
-        .toggle-profile {
-          color: #2f3542;
-          margin: 0 5px;
-        }
-
-        .dropdown-content {
-          //display: none;
-          position: absolute;
-          background-color: #f9f9f9;
-          min-width: 160px;
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          z-index: 1;
-        }
-      }
 
       .main-navigation-toggle {
         display: none;
@@ -103,7 +96,7 @@ $active-color: #00A6EA;
       position: absolute;
       right: 0;
     }
-  }
+  }*/
 }
 
 @media screen and (max-width: 768px) {

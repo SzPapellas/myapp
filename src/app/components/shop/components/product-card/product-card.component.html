@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card">
+    <div class="card-head">
+      <div class="product-detail">
+        <img alt="Shoe" class="product-img" src="{{ product.imgSrc }}">
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="product-desc">
+        <span class="product-title">
+          {{ product.name }}
+        </span>
+        <span class="product-details">
+            {{ (product.details.length > 100) ? (product.details | slice:0:100) + '...' : (product.details) }}
+        </span>
+        <div class="product-desc-footer">
+          <a class="more-button" routerLink="/product/{{product.id}}"><b>More &#62;&#62;</b></a>
+        </div>
+      </div>
+      <span class="product-price">
+        {{ product.price['huf'].price }} {{ product.price['huf'].currency }}
+      </span>
+    </div>
+    <div class="card-footer">
+        <a href="#" class="add-to-cart">add to cart</a>
+      <div class="add-to-cart-quantity">
+        <i class="fa fa-minus"></i>
+        <span>1</span>
+        <i class="fa fa-plus"></i>
+      </div>
+    </div>
+  </div>
+</div>

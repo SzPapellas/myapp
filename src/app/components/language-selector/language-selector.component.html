@@ -1,0 +1,24 @@
+<!--<div class="dropdown" (click)="toggleLanguageSelector()">
+  <button class="dropbtn">
+    <img src="{{ selectedLanguage.path }}" width="24" height="12">{{selectedLanguage.label}}
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" *ngIf="isLanguageSelectorVisible">
+    <a *ngFor="let language of languages;" (click)="setActiveLanguage(language)">
+    <img src="{{ language.path }}" width="24" height="12">{{language.label}}
+    </a>
+  </div>
+</div>-->
+
+
+<div class="language-selector">
+  <button class="language-selector-toggle" (click)="toggleLanguageSelector()">
+     <img src="{{ selectedLanguage.path }}" width="24" height="12">{{selectedLanguage.label}}
+     <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="language-selector-content" *ngIf="isLanguageSelectorVisible">
+    <a *ngFor="let language of languages;" (click)="setActiveLanguage(language)">
+      <img src="{{ language.path }}" width="24" height="12">{{language.label}}
+    </a>
+  </div>
+</div>
