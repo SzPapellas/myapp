@@ -24,9 +24,9 @@
     <div class="card-footer">
         <a href="#" class="add-to-cart">add to cart</a>
       <div class="add-to-cart-quantity">
-        <i class="fa fa-minus"></i>
-        <span>1</span>
-        <i class="fa fa-plus"></i>
+        <i (click)="decreaseQuantity()" class="fa fa-minus"></i>
+        <span class="quantity">{{ quantity|async }}</span>
+        <i (click)="increaseQuantity()" class="fa fa-plus"></i>
       </div>
     </div>
   </div>

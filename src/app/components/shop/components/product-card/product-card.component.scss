@@ -93,7 +93,6 @@
   }
 
   .add-to-cart-quantity {
-
     border: 1px solid #edeff2;
     width: 100px;
     height: 40px;
@@ -111,8 +110,20 @@
     top: 10px;
     display: block;
 
-    i, span {
+    .quantity {
+      user-select: none;
+    }
+
+    i, .quantity {
       color: #2c97de;
+    }
+
+    i {
+      padding: 4px;
+      
+      &:hover {
+        color: $hover-background-color;
+      }
     }
 
     span {

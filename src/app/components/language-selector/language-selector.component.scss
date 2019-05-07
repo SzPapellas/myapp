@@ -49,3 +49,22 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .language-selector {
+    width: 100%;
+
+    .language-selector-toggle {
+      width: 100%;
+      text-align: left;
+
+      img {
+        margin-left: 0px;
+      }
+    }
+
+    .language-selector-content {
+      width: 50%;
+    }
+  }
+}

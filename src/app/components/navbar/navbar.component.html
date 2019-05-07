@@ -1,33 +1,36 @@
 <div class="main-navigation">
+  <a class="main-navigation-item" i18n routerLink="/home" [ngClass]="{ 'is-hidden': isHidden }">
+    AppName
+  </a>
+  <a class="main-navigation-item" i18n routerLink="/home" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+    Home
+  </a>
+  <a class="main-navigation-item" i18n routerLink="/about" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+    About Us
+  </a>
+  <a class="main-navigation-item" i18n routerLink="/products" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+    Products
+  </a>
+  <a class="main-navigation-item" i18n routerLink="/services" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+    Services
+  </a>
+  <a class="main-navigation-item" i18n routerLink="/shop" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+    Shop
+  </a>
+  <a class="main-navigation-item" i18n routerLink="/contact" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
+    Contact Us
+  </a>
+  <a class="main-navigation-item" i18n routerLink="/profile" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active" *ngIf="isLoggedIn">
+    Profile
+  </a>
+  <a class="main-navigation-item" i18n routerLink="/login" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active" *ngIf="!isLoggedIn">
+    Login
+  </a>
+  <a class="main-navigation-item" i18n *ngIf="isLoggedIn" [ngClass]="{ 'is-hidden': isHidden }" (click)="logout()">
+    Logout
+  </a>
   <a class="main-navigation-toggle" (click)="toggleResponsiveMenu()">
     <i class="fa" [ngClass]="{ 'fa-times': !isHidden, 'fa-bars': isHidden }"></i>
   </a>
-  <a i18n routerLink="/home" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
-    Home
-  </a>
-  <a i18n routerLink="/about" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
-    About Us
-  </a>
-  <a i18n routerLink="/products" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
-    Products
-  </a>
-  <a i18n routerLink="/services" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
-    Services
-  </a>
-  <a i18n routerLink="/shop" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
-    Shop
-  </a>
-  <a i18n routerLink="/contact" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active">
-    Contact Us
-  </a>
-  <a i18n routerLink="/profile" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active" *ngIf="isLoggedIn">
-    Profile
-  </a>
-  <a i18n routerLink="/login" [ngClass]="{ 'is-hidden': isHidden }" routerLinkActive="active" *ngIf="!isLoggedIn">
-    Login
-  </a>
-  <a i18n *ngIf="isLoggedIn" (click)="logout()">
-    Logout
-  </a>
-  <app-language-selector></app-language-selector>
+  <app-language-selector class="app-language-selector" [ngClass]="{ 'is-hidden': isHidden }"></app-language-selector>
 </div>

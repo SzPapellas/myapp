@@ -42,6 +42,6 @@ import {ProductPage} from './components/product/product.module';
 })
 export class AppModule {
   constructor() {
-    registerLocaleData(localeHu, 'fr');
+    registerLocaleData(localeHu, 'hu');
   }
 }

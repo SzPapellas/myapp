@@ -1,7 +1,4 @@
 @import '../../../variables/colors/primary-colors';
-
-
-
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 .main-navigation {
@@ -12,7 +9,7 @@
   width: 100%;
   box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.2);
 
-  a {
+  .main-navigation-item {
     background-color: $main-color;
     float: left;
     display: block;
@@ -34,110 +31,56 @@
     }
   }
 
-  /*.main-navigation-list {
-    position: relative;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    .main-navigation-item {
-      position: relative;
-
-      .main-navigation-toggle {
-        display: none;
-      }
-
-      .active-indicator {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-      }
-
-      &:hover:not(:first-child) {
-        a {
-          background-color: $hover-background-color;
-          color: white;
-        }
-      }
-
-      &.active {
-        .active-indicator {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 2px;
-          background-color: $active-color;
-        }
-      }
-    }
-
-    .main-navigation-item:first-child {
-      position: relative;
-      .main-navigation-toggle {
-        position: absolute;
-        right: 0;
-        height: 48px;
-        width: 48px;
-        padding: 0;
-
-        i {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-      }
-    }
-
-    .main-navigation-item:last-child {
-      position: absolute;
-      right: 0;
-    }
-  }*/
+  .main-navigation-toggle {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .main-navigation {
-    .main-navigation-list {
-      .main-navigation-item:not(:first-child) {
+    .main-navigation-item {
+      display: block;
+      float: left;
+      width: 100%;
+      text-align: left;
+
+      &.is-hidden {
+        display: none;
+      }
+
+      .active-indicator {
+        left: 0;
+        top: 0;
+        width: 2px;
+        height: 100% !important;
+      }
+
+      &:first-child {
         display: block;
         float: left;
         width: 100%;
-
-        a {
-          width: 100%;
-          text-align: left;
-        }
-
-        &.is-hidden {
-          display: none;
-        }
       }
+    }
 
-      .main-navigation-item:first-child {
-         display: block;
-         float: left;
-         width: 100%;
+    .main-navigation-toggle {
+      position: absolute;
+      display: block;
+      right: 8px;
+      height: 46px;
+      width: 46px;
+      padding: 0;
 
-         .main-navigation-toggle {
-           display: block;
-         }
-       }
-
-      .main-navigation-item:last-child {
-        position: relative;
+      i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
+    }
 
-      .main-navigation-item {
-        .active-indicator {
-          left: 0;
-          top: 0;
-          width: 2px;
-          height: 100% !important;
-        }
+    .app-language-selector {
+      &.is-hidden {
+        display: none;
       }
     }
   }
