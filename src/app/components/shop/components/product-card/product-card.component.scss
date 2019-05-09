@@ -90,6 +90,7 @@
     position: absolute;
     top: 10px;
     display: block;
+    cursor: pointer;
   }
 
   .add-to-cart-quantity {
@@ -120,6 +121,7 @@
 
     i {
       padding: 4px;
+      cursor: pointer;
       
       &:hover {
         color: $hover-background-color;
@@ -130,15 +132,6 @@
       padding: 10px;
       font-size: 12px;
     }
-  }
-
-  a.add-to-cart.size {
-    width: 48px;
-    left: 108px;
-    font-size: 0;
-    color: #e7bb45;
-    letter-spacing: 0;
-    transition: .2s linear;
   }
 
   a.add-to-cart.hover {

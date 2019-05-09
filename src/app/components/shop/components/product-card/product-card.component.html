@@ -10,6 +10,11 @@
         <span class="product-title">
           {{ product.name }}
         </span>
+
+        <span class="product-stock">
+          Stock: {{ product.stock }}
+        </span>
+
         <span class="product-details">
             {{ (product.details.length > 100) ? (product.details | slice:0:100) + '...' : (product.details) }}
         </span>
@@ -22,10 +27,10 @@
       </span>
     </div>
     <div class="card-footer">
-        <a href="#" class="add-to-cart">add to cart</a>
+        <a (click)="addToCart()" class="add-to-cart">add to cart</a>
       <div class="add-to-cart-quantity">
         <i (click)="decreaseQuantity()" class="fa fa-minus"></i>
-        <span class="quantity">{{ quantity|async }}</span>
+        <span class="quantity">{{ quantity }}</span>
         <i (click)="increaseQuantity()" class="fa fa-plus"></i>
       </div>
     </div>

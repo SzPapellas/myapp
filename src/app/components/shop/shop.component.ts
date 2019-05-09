@@ -21,6 +21,7 @@ export class ShopComponent implements OnInit {
                     currency: 'HUF'
                 }
             },
+            stock: 2,
             details: `Call park out she wife face mean. Invitation excellence imprudence understood`,
             imgSrc: ''
         },
@@ -37,6 +38,7 @@ export class ShopComponent implements OnInit {
                     currency: 'HUF'
                 }
             },
+            stock: 5,
             details: `Call park out she wife face mean. Invitation excellence imprudence understood it any age hunted.`,
             imgSrc: ''
         },
@@ -53,6 +55,7 @@ export class ShopComponent implements OnInit {
                     currency: 'HUF'
                 }
             },
+            stock: 0,
             details: `Far merits season better tended any age hunted.`,
             imgSrc: ''
         },
@@ -69,6 +72,7 @@ export class ShopComponent implements OnInit {
                     currency: 'HUF'
                 }
             },
+            stock: 20,
             details: `Meet shew or said like he.`,
             imgSrc: ''
         },

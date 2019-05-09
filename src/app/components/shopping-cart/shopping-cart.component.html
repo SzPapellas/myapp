@@ -1,0 +1,9 @@
+<div class="shopping-cart-details-container">
+  <a class="cart">
+    <i class="fa fa-shopping-cart"></i>
+    <span class="counter" *ngIf="(cart|async).sum > 0">{{ (cart|async).sum }}</span>
+  </a>
+  <div class="shopping-cart-details">
+    valami
+  </div>
+</div>

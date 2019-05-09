@@ -17,6 +17,7 @@ import localeHu from '@angular/common/locales/hu';
 import {ProductsPage} from './components/products/products.module';
 import {ShopPage} from './components/shop/shop.module';
 import {ProductPage} from './components/product/product.module';
+import {Footer} from './components/footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {ProductPage} from './components/product/product.module';
     ProductsPage,
     ProductPage,
     ShopPage,
-    BackToTop
+    BackToTop,
+    Footer
   ],
   providers: [LoginRouteGuard],
   bootstrap: [AppComponent]

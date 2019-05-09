@@ -1,23 +1,21 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
-import {NavbarComponent} from './navbar.component';
-import {ShoppingCart} from '../shopping-cart/shopping-cart.module';
+import {ShoppingCartComponent} from './shopping-cart.component';
 
 @NgModule({
     declarations: [
-        NavbarComponent
+        ShoppingCartComponent
     ],
     imports: [
         CommonModule,
-        RouterModule,
-        ShoppingCart
+        RouterModule
     ],
     bootstrap: [
-        NavbarComponent
+        ShoppingCartComponent
     ],
     exports: [
-        NavbarComponent
+        ShoppingCartComponent
     ]
 })
-export class Navbar {}
+export class ShoppingCart {}

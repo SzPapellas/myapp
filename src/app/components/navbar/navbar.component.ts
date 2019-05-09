@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {LoginService} from '../../services/login.service';
 
@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
       private router: Router,
       private loginService: LoginService
   ) {
-    router.events.subscribe((val) => { this.isHidden = true; });
+    router.events.subscribe(() => { this.isHidden = true; });
   }
 
   ngOnInit() {

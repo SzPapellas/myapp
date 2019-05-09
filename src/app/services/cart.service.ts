@@ -1,29 +1,27 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, combineLatest} from 'rxjs';
-import {map, switchMap} from 'rxjs/operators';
+import {BehaviorSubject, combineLatest, Observable, of} from 'rxjs';
+import {find, map, switchMap} from 'rxjs/operators';
+import {Cart, CartItem} from '../interfaces/cart-item.interface';
 
 @Injectable({
     providedIn: 'root'
 })
 export class CartService {
+    cart: BehaviorSubject<Cart> = new BehaviorSubject({
+        items: [],
+        sum: 0
+    });
 
-    quantity: BehaviorSubject<number> = new BehaviorSubject(0);
+    constructor() {}
 
-    constructor() { }
-
-    getQuantity() {
-        return this.quantity;
+    getCart() {
+        return this.cart;
     }
 
-    setQuantity(value) {
-        this.quantity.next(value);
-    }
-
-    decreaseQuantity() {
-        this.quantity.pipe(map(value => value + 1)).subscribe();
-    }
-
-    increaseQuantity() {
-        this.quantity.pipe(map(i => (i + 1))).subscribe(i => console.log(i));
+    addToCart(item) {
+        this.cart.pipe(map(cart => {
+            cart.items.push(item);
+            cart.sum += item.quantity;
+        })).subscribe();
     }
 }

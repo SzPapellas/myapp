@@ -29,8 +29,8 @@
   <a class="main-navigation-item" i18n *ngIf="isLoggedIn" [ngClass]="{ 'is-hidden': isHidden }" (click)="logout()">
     Logout
   </a>
+  <app-shopping-cart class="app-shopping-cart"></app-shopping-cart>
   <a class="main-navigation-toggle" (click)="toggleResponsiveMenu()">
     <i class="fa" [ngClass]="{ 'fa-times': !isHidden, 'fa-bars': isHidden }"></i>
   </a>
-  <app-language-selector class="app-language-selector" [ngClass]="{ 'is-hidden': isHidden }"></app-language-selector>
 </div>

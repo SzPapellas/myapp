@@ -10,9 +10,9 @@ import {CartService} from '../../../../services/cart.service';
 export class ProductCardComponent implements OnInit {
   @Input() product;
 
-  quantity = this.cartService.getQuantity();
+  quantity = 0;
 
-  nation: "eu";
+  nation: 'eu';
 
   constructor(private cartService: CartService) { }
 
@@ -24,11 +24,26 @@ export class ProductCardComponent implements OnInit {
   }
 
   decreaseQuantity() {
-    this.cartService.decreaseQuantity();
+    if (this.quantity - 1 >= 0) {
+      this.quantity -= 1;
+    }
   }
 
   increaseQuantity() {
-    this.cartService.increaseQuantity();
+    if (this.quantity + 1 <= this.product.stock) {
+      this.quantity += 1;
+    }
+  }
+
+  addToCart() {
+    if (this.quantity > 0) {
+      this.cartService.addToCart({
+        product: this.product,
+        quantity: this.quantity
+      });
+
+      this.quantity = 0;
+    }
   }
 
 }
